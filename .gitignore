@@ -1,0 +1,11 @@
+# Ignore exe files
+*.exe
+
+# Ignore object files
+*.o
+
+# Ignore backup files
+*~
+
+# Ignore VSCode settings
+.vscode/
