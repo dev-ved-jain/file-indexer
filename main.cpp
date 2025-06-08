@@ -6,7 +6,7 @@
 #include <condition_variable>
 #include "ThreadPool.hpp"
 #include "FileScanner.hpp"
-#include "InvertedIndex.hpp"
+#include "WordBaseIndex.hpp"
 #include "FileReader.hpp"
 
 std::atomic<int> activeTasks{0};
@@ -25,7 +25,7 @@ int main() {
     std::cout << "Total Files Found :" << files.size() << std::endl;
 
     // enqueue the file reading and indexing task
-    InvertedIndex index;
+    WordBaseIndex index;
     for(const auto& file : files) {
         // increment task counter before starting the task
         ++activeTasks;

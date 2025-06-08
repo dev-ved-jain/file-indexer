@@ -4,12 +4,12 @@
 #include <set>
 #include <mutex>
 
-class InvertedIndex {
+class WordBaseIndex {
 private:
     // each word with set of files containing that word
     std::unordered_map<std::string, std::set<std::string>> index;
     // mutex for index map for thread safety
-    mutable std::mutex indexMutex;
+    mutable std::mutex indexMutex; // mutable will help us lock this mutex inside const functions also
 public:
     int getSize() {
         return index.size();
